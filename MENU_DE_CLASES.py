@@ -1,4 +1,4 @@
-clase  Básica :
+class  Básica :
     def  __init__ ( yo ):
         pasar
     
