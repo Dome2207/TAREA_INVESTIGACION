@@ -1,117 +1,117 @@
-class  Básica :
-    def  __init__ ( yo ):
-        pasar
+class Basico:
+    def __init__(self):
+        pass
     
-    def  numerosN ( yo , n ):
-        para  i  en el  rango ( 1 , n + 1 ):
-            imprimir ( i )
+    def numerosN(self,n):
+        for i in range(1,n+1):
+            print(i)
             
     
-    def  multiplo ( yo , numero1 , numero2 ):
-        if  numero1  %  numero2  ==  0 :
-            print ( "El numero {} si es multiplo de {}" . formato ( numero1 , numero2 ))
-        otra cosa :
-            print ( "El numero {} no es multiplo de {}" . formato ( numero1 , numero2 ))
+    def multiplo(self, numero1, numero2):
+        if numero1 % numero2 == 0:
+            print("El numero {} si es multiplo de {}".format(numero1,numero2))
+        else:
+            print("El numero {} no es multiplo de {}".format(numero1,numero2))
             
-    def  divisoresNumero ( self , numero ):
-        lista  = []
-        para  i  en el  rango ( 1 , numero + 1 ):
-            si  numero  %  i  ==  0 :
-                lista . añadir ( i )
-        volver  lista
+    def divisoresNumero(self, numero):
+        lista = []
+        for i in range (1, numero+1):
+            if numero % i == 0:
+                lista.append(i)
+        return lista
     
-    def  primo ( yo , número ):
-        contador  =  0
-        para  i  en el  rango ( 1 , numero  +  1 ):
-            si  numero  %  i  ==  0 :
-                contador  + =  1
-        si  contador  ==  2 :
-            print ( "Es un numero primo" )
-        otra cosa :
-            print ( "No es un numero primo" )
+    def primo(self, numero):
+        contador = 0
+        for i in range(1, numero + 1):
+            if numero % i == 0:
+                contador += 1
+        if contador == 2:
+            print("Es un numero primo")
+        else:
+            print("No es un numero primo")
 
-    def  perfecto ( yo , número ):
-        acu = 0
-        para  i  en el  rango ( 1 , numero ):
-            si  numero  %  i  ==  0 :
-                acu  =  acu + i
-        si  acu  ==  numero :
-            imprimir ( "Numero Perfecto" )
-        otra cosa :
-            print ( "Numero no es perfecto" )
+    def perfecto(self, numero):
+        acu=0
+        for i in range(1, numero):
+            if numero % i == 0:
+                acu = acu+i
+        if acu == numero:
+            print("Numero Perfecto")
+        else:
+            print("Numero no es perfecto")
             
         
-clase  Intermedio ( Básico ):
-    def  __init__ ( yo ):
-        pasar
+class Intermedio(Basico):
+    def __init__(self):
+        pass
         
-    def  numerosN ( yo , n ):
-        i  =  1
-        mientras que  yo  <=  n :
-            imprimir ( i )
-            yo  =  yo  +  1
+    def numerosN(self,n):
+        i = 1
+        while i <= n:
+            print(i)
+            i = i + 1
             
-    def  factorial ( uno mismo , número ):
-        resultado  =  1
-        para  i  en el  rango ( 1 , numero  +  1 ):
-            resultado  =  resultado  *  i
-        volver  resultado
+    def factorial(self,numero):
+        resultado = 1
+        for i in range(1, numero + 1):
+            resultado = resultado * i
+        return resultado
     
-    def  fibonacci ( yo , n ):
-        a  =  0
-        b  =  1
-        para  i  en el  rango ( n ):
-            c  =  a + b
-            a  =  b
-            b  =  c
-        devolver  un
+    def fibonacci(self,n):
+        a = 0
+        b = 1
+        for i in range(n):
+            c = a+b
+            a = b
+            b = c
+        return a
         
-    def  primosGemelos ( self , numero1 , numero2 ):
-        a  =  0
-        si  numero1  >  0  y  numero2  >  0  y  numero1  ! =  numero2 :
-            si  numero1  >  numero2 :
-                numero1 ^ = numero2
-                numero2 ^ = numero1
-                numero1 ^ = numero2
-            para  i  en  rango ( numero1 , numero2 + 1 ):
-                creciente  =  2
-                esPrimo  =  Verdadero
+    def primosGemelos (self,numero1,numero2):
+        a = 0
+        if numero1 > 0 and numero2 > 0 and numero1 != numero2:
+            if numero1 > numero2:
+                numero1 ^= numero2
+                numero2 ^= numero1
+                numero1 ^= numero2
+            for i in range (numero1, numero2+1):
+                creciente = 2
+                esPrimo = True
                 
-                mientras  esPrimo  y  creciente  <  i :
-                    si  i  %  creciente  ==  0 :
-                        esPrimo  =  Falso
-                    otra cosa :
-                        creciente  + =  1
-                si  esPrimo  y  no  un :
-                    a  =  yo
-                elif  esPrimo  y  a :
-                    b  =  yo
-                    si  b - a  ==  2 :
-                        print ( "{} y {} son numeros primos gemelos" . formato ( a , b ))
-                        a = yo
+                while esPrimo and creciente < i:
+                    if i % creciente == 0:
+                        esPrimo = False
+                    else:
+                        creciente += 1
+                if esPrimo and not a:
+                    a = i
+                elif esPrimo and a:
+                    b = i
+                    if b-a == 2:
+                        print("{} y {} son numeros primos gemelos".format(a, b))
+                        a=i
                     
-        otra cosa :
-            si  numero1  ==  numero2 :
-                print ( "Incorrecto los numeros son Iguales." )    
-            otra cosa :
-                print ( "Los numeros son incorrectos." )
+        else:
+            if numero1 == numero2:
+                print("Incorrecto los numeros son Iguales.")    
+            else:
+                print("Los numeros son incorrectos.")
                 
-    def  amigos ( yo , numero1 , numero2 ):
-        acu1  =  0
-        lista1  = []
-        para  i  en el  rango ( 1 , numero1 ):
-            si  numero1  %  i  ==  0 :
-                lista1 . añadir ( i )
-                acu1  =  acu1  +  i
+    def amigos(self, numero1, numero2):
+        acu1 = 0
+        lista1 = []
+        for i in range(1, numero1):
+            if numero1 % i == 0:
+                lista1.append(i)
+                acu1 = acu1 + i
                 
-        acu2  =  0
-        lista2  = []
-        para  x  en el  rango ( 1 , numero2 ):
-            si  numero2  %  x  ==  0 :
-                lista2 . añadir ( x )
-                acu2  =  acu2  +  x
+        acu2 = 0
+        lista2 = []
+        for x in range(1, numero2):
+            if numero2 % x == 0:
+                lista2.append(x)
+                acu2 = acu2 + x
                 
-        si  acu1  ==  numero2  y  acu2  ==  numero1 :
-            print ( "Los numeros {} y {} si son numeros amigos." . formato ( numero1 , numero2 ))
-        otra cosa :
-            print ( "Los numeros {} y {} no son numeros amigos." . formato ( numero1 , numero2 ))
+        if acu1 == numero2 and acu2 == numero1:
+            print("Los numeros {} y {} si son numeros amigos.".format(numero1, numero2))
+        else:
+            print("Los numeros {} y {} no son numeros amigos.".format(numero1, numero2))
